@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title><%= current_page.data.title %></title>
+
+        <meta name="description" content="<%= current_page.data.description %>" />
+        <meta name="robots" content="index, follow"/>
+        <link rel="canonical" href="http://example.com" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="<%= current_page.data.title %>" />
+        <meta property="og:description" content="<%= current_page.data.description %>" />
+        <meta property="og:url" content="https://example.com/" />
+        <meta property="og:site_name" content="Site Name" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content="<%= current_page.data.description %>" />
+        <meta name="twitter:title" content="<%= current_page.data.title %>" />
+
+        <%= stylesheet_link_tag "site" %>   
+    </head>
+
+    <body data-barba="wrapper" dir="ltr">
+        <div class="load-container">
+            <div class="loading-screen"></div>
+        </div>
+
+        
+        <%= partial "partials/_navigation" %>
+        <%= yield %>
+        <%= partial "partials/_footer" %>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- unpkg -->
+        <script src="https://unpkg.com/@barba/core"></script>
+        <!-- jsdelivr -->
+        <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+        <!-- gsap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+
+        <%= javascript_include_tag "global" %>
+        <%= yield_content(:scripts) %>
+    </body>
+</html>
